@@ -42,5 +42,6 @@
     <orderEntry type="library" name="spring-aop-5.1.0.RELEASE" level="project" />
     <orderEntry type="library" name="jsp-api" level="project" />
     <orderEntry type="library" name="spring-web-5.1.0.RELEASE" level="project" />
+    <orderEntry type="library" name="aopalliance-1.0" level="project" />
   </component>
 </module>

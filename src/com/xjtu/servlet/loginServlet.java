@@ -2,8 +2,9 @@ package com.xjtu.servlet;
 
 import com.xjtu.pojo.User;
 import com.xjtu.service.UserService;
+import com.xjtu.service.UserServiceImpl;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
 import javax.servlet.ServletException;
@@ -13,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public class loginServlet extends HttpServlet {
-    UserService userService;
+    private UserService userService;
     @Override
     public void init() throws ServletException {
         /*传统方式*/
@@ -39,7 +40,7 @@ public class loginServlet extends HttpServlet {
         User u = userService.checkUserInfoService(uname,pwd);
         //响应处理结果
         if(u!=null){
-            resp.sendRedirect(req.getContextPath()+"/success.jsp");
+            resp.getWriter().write("登录成功");
         }
     }
 }
